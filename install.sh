@@ -40,8 +40,8 @@ echo "Please read the README.md carefully before proceeding!"
 echo "I hope you know what you are doing..."
 echo "Press ENTER to start (or Ctrl + C to abort the mission)"
 read
-adb root
-adb remount
+adb root || exit 1
+adb remount || exit 1
 echo "Remounted. Press ENTER to start moving files"
 read
 adb push "$cacheDir/F-DroidPrivilegedExtension.apk" /system/priv-app/
